@@ -1,4 +1,15 @@
 h1{
     width: 100%;
     text-align: center;
+    color: rgb(1, 72, 139);
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.worker {
+    margin: 0;
+    height: 50%;
+    width: 50%;
+    margin-left: 25%;
+
 }
