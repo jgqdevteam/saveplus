@@ -1,7 +1,9 @@
 h1{
     width: 100%;
     text-align: center;
-    color: rgb(1, 72, 139);
+    background-color: rgb(1, 72, 139);
+    color: rgb(255, 255, 255);
+    padding: 1%;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -18,5 +20,8 @@ hr{
 
 footer{
    text-align: center;
-   color: rgb(1, 72, 139);
+   background-color: rgb(1, 72, 139);
+   color: rgb(255, 255, 255);
+   padding: 1%;
+   margin: 0;
 }
