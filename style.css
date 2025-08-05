@@ -10,7 +10,7 @@ h1{
     margin: 0;
     height: auto;
     width: 45%;
-    margin-left: 25%;
+    margin-left: 27.5%;
 }
 hr{
      color: rgb(1, 72, 139);
@@ -19,4 +19,5 @@ hr{
 footer{
    text-align: center;
    color: rgb(1, 72, 139);
+
 }
