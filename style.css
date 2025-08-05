@@ -1,27 +1,39 @@
 h1{
-    width: 100%;
     text-align: center;
     background-color: rgb(1, 72, 139);
     color: rgb(255, 255, 255);
-    padding: 1%;
-    margin: 0;
+    padding: 15px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    margin: 0;
+  }
 
 .worker {
-    margin: 0;
-    height: auto;
-    width: 40%;
-    margin-left: 30%;
-}
-hr{
-     color: rgb(1, 72, 139);
+    height: 25%;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 0;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.main {
+  flex: 1; /* This pushes the footer down */
+  padding: 20px;
+}
+
+
 footer{
-   text-align: center;
-   background-color: rgb(1, 72, 139);
-   color: rgb(255, 255, 255);
-   padding: 1%;
-   margin: 0;
+  text-align: center;
+  background-color: rgb(1, 72, 139);
+  color: rgb(255, 255, 255);
+  padding: 15px;
 }
