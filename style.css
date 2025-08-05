@@ -8,8 +8,15 @@ h1{
 
 .worker {
     margin: 0;
-    height: 50%;
-    width: 50%;
+    height: auto;
+    width: 45%;
     margin-left: 25%;
+}
+hr{
+     color: rgb(1, 72, 139);
+}
 
+footer{
+   text-align: center;
+   color: rgb(1, 72, 139);
 }
