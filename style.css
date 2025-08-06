@@ -1,6 +1,5 @@
 h1{
     text-align: center;
-    background-color: rgb(1, 72, 139);
     color: rgb(255, 255, 255);
     padding: 15px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,18 +10,19 @@ h1{
     height: 25%;
     width: 50%;
     margin-left: 25%;
-    margin-bottom: 0;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: white;
 }
 
 html, body {
   height: 100%;
   margin: 0;
+  background-color: rgb(1, 72, 139);
 }
 
 .main {
@@ -33,7 +33,6 @@ html, body {
 
 footer{
   text-align: center;
-  background-color: rgb(1, 72, 139);
   color: rgb(255, 255, 255);
   padding: 15px;
 }
