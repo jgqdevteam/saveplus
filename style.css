@@ -8,7 +8,7 @@
       display: grid;
       height: 100vh;
       grid-template-columns: 1fr;
-      grid-template-rows: 50px 30px 1fr 45px;
+      grid-template-rows: 50px 30px 1fr 30px;
     }
 
     .header{
@@ -45,7 +45,32 @@
     }
 
     .divworker{
-      scale: 50%;
+      object-fit: cover;
     }
+
+
+
+.menu-container {
+  display: flex;
+}
+
+.menu {
+  display: inline-block;
+  padding: 10px 10px;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  text-decoration: none;      /* remove underline */
+  border-radius: 5px;         /* rounded edges */
+  transition: all 0.3s ease;  /* smooth hover */
+  cursor: pointer;
+}
+
+/* Hover effect */
+.menu:hover {
+  background-color: rgb(0, 213, 255);
+  color: white;
+  box-shadow: 0 0 10px rgb(0, 149, 255);
+}
+
 
 
