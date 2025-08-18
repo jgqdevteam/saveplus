@@ -4,8 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background: url('https://via.placeholder.com/1200x400') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-top: 10px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .intro h2 {
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .highlight-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .highlight-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .highlight-card h3 {
+      margin: 15px;
+      color: #444;
+    }
+
+    .highlight-card p {
+      margin: 0 15px 20px 15px;
+      color: #666;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+  </style>
 </head>
 <body>
-    <img class="worker" src="../asset/images/undies.png" alt="underconst"/>
+   <div class="hero">
+    <div>
+      <h1>Welcome to Our Labor Service Company</h1>
+      <p>Providing reliable manpower solutions for every industry</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="intro">
+      <h2>Who We Are</h2>
+      <p>
+        We specialize in providing skilled and unskilled labor services for construction, 
+        manufacturing, logistics, and more. Our mission is to deliver trusted manpower 
+        that helps businesses grow and succeed.
+      </p>
+    </div>
+
+    <div class="highlights">
+      <div class="highlight-card">
+        <img src="https://images01.military.com/sites/default/files/styles/full/public/media/news/buildings/2015/03/construction-of-a-new-veter.jpg" alt="Construction Service">
+        <h3>Construction Workforce</h3>
+        <p>Experienced builders and helpers for residential, commercial, and industrial projects.</p>
+      </div>
+      <div class="highlight-card">
+        <img src="https://media.gettyimages.com/id/1417833187/photo/professional-cleaner-vacuuming-a-carpet.jpg?s=1024x1024&w=gi&k=20&c=MqIkRHiAuI0946gA1YJ8o1H9gNKNmJbdimzmk2cX1iY=" alt="Cleaning Service">
+        <h3>Cleaning & Janitorial</h3>
+        <p>Professional cleaning services to maintain a safe and hygienic workplace.</p>
+      </div>
+      <div class="highlight-card">
+        <img src="https://media.istockphoto.com/id/1464357007/photo/container-truck-in-ship-port-for-business-logistics-and-transportation-of-container-cargo.jpg?s=1024x1024&w=is&k=20&c=nZFppzH-ngOPRlxtUFLUMEgd_hnW39lXZ204JazUVqE=" alt="Logistics Service">
+        <h3>Logistics Support</h3>
+        <p>Warehouse workers, movers, and logistics staff to ensure smooth operations.</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
