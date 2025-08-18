@@ -5,14 +5,13 @@
   }
   
   .container {
-      height: 100vh;
       display: grid;
+      height: 100vh;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-rows: 50px 30px 1fr 45px;
     }
 
     .header{
-
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,6 +22,8 @@
     .sidebar{
       padding-left: 20px;
       display: flex;
+      justify-content: left;
+      align-items: center;
       background-color: rgba(0, 153, 255, 0.591);
       gap: 20px;
       color: white;
@@ -41,6 +42,10 @@
       align-items: center;
       height: 2rem;
       color: white;
+    }
+
+    .divworker{
+      scale: 50%;
     }
 
 
