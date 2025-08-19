@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -42,6 +42,7 @@
       flex-wrap: wrap;
       gap: 20px;
       margin-top: 20px;
+      justify-content: center;
     }
 
     .member {
@@ -51,12 +52,20 @@
       padding: 15px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      cursor: pointer;
     }
 
     .member img {
-      width: 500px;
+      width: 100%;
+      max-width: 500px;
       height: auto;
       margin-bottom: 10px;
+      border-radius: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .member img:hover {
+      transform: scale(1.05);
     }
 
     .member h3 {
@@ -68,33 +77,103 @@
       font-size: 14px;
       color: #666;
     }
+
+    /* Fullscreen Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .close:hover {
+      color: #ff5555;
+    }
   </style>
 </head>
 <body>
-    <div class="container">
+  <div class="container">
     <h1>About Us</h1>
-    <p>Save Plus Labor Service Cooperative was founded in March 2016. Composed of expert members which can help optimize your business. Our expertise and business approach would help in the progression of your business.
-    <br/>
-    <br/>We take pride in valuing the time, skills and opinion of our owner-members and business partners.
+    <p>
+      Save Plus Labor Service Cooperative was founded in March 2016. Composed of expert members which can help optimize your business. Our expertise and business approach would help in the progression of your business.
+      <br><br>
+      We take pride in valuing the time, skills and opinion of our owner-members and business partners.
     </p>
 
     <h2>Our Mission</h2>
-    <p>We are committed offering not just quality service but a service beyond the expectations of our owner-members and our clients.
-      <br/>
-      <br/>We are committed in helping our owner-member elevate their way of life and live the life they deserve.
+    <p>
+      We are committed offering not just quality service but a service beyond the expectations of our owner-members and our clients.
+      <br><br>
+      We are committed in helping our owner-member elevate their way of life and live the life they deserve.
     </p>
 
     <h2>Our Vision</h2>
-    <p>To inspire its owner-members to be the best they can be.<br/>
-      To be known as one of the best service providers that delivers competitive members on site.</p>
+    <p>
+      To inspire its owner-members to be the best they can be.<br>
+      To be known as one of the best service providers that delivers competitive members on site.
+    </p>
 
     <h2>Meet the Team</h2>
     <div class="team">
       <div class="member">
-        <img src="../asset/images/sp04.jpg" alt="Manager">
+        <img src="../asset/images/sp04.jpg" alt="Manager" id="teamImage">
         <h3>SavePlus Family</h3>
       </div>
     </div>
   </div>
+
+  <!-- Fullscreen Modal -->
+  <div class="modal" id="imageModal">
+    <span class="close" id="closeModal">&times;</span>
+    <img id="modalImg" src="" alt="Fullscreen Image">
+  </div>
+
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeModal = document.getElementById("closeModal");
+    const teamImg = document.getElementById("teamImage");
+
+    // Open modal when team image is clicked
+    teamImg.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = teamImg.src;
+    });
+
+    // Close modal when X is clicked
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    // Close modal when clicking outside image
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
