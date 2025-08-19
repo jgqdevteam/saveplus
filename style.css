@@ -49,23 +49,31 @@ body {
 /* Navigation */
 /* Sidebar Default */
 .sidebar {
-  overflow-x: auto;     /* allow horizontal scrolling */
-  white-space: nowrap;  /* prevent wrapping */
   background-color: #007bff;
 }
 
 .menu-container {
-  display: inline-flex;
+  display: flex;
   gap: 15px;
   padding: 10px;
+  justify-content: center;
+  flex-wrap: nowrap;   /* ✅ desktop: one line */
 }
 
 .menu {
   flex: 0 0 auto;       /* prevent stretching */
   display: inline-block;
+  padding: 8px 16px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;  /* ✅ FIXED */
 }
 
-
+.menu:hover {
+  background-color: #0056b3;  /* darker shade on hover */
+  border-radius: 5px;
+}
 
 /* Content */
 .content {
@@ -94,15 +102,14 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .header h1 {
-    font-size: 1.1rem;
-  }
   .menu-container {
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-direction: column;   /* ✅ stack vertically */
+    align-items: stretch;
+    gap: 5px;
   }
   .menu {
     font-size: 14px;
-    padding: 6px 12px;
+    text-align: center;
+    padding: 10px;
   }
 }
