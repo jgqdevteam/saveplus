@@ -96,8 +96,9 @@ body {
   border: none;
   color: white;
   cursor: pointer;
-  margin-left: auto;
+  margin-right: auto;   /* ✅ push it to the left */
 }
+
 
 /* Tablet (600px–992px) */
 @media (max-width: 992px) {
