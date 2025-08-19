@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -39,6 +39,7 @@
       border-radius: 10px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
       position: relative;
+      cursor: pointer;
     }
 
     .gallery-item img {
@@ -49,13 +50,11 @@
       transition: transform 0.4s ease, filter 0.4s ease;
     }
 
-    /* Hover animation */
     .gallery-item:hover img {
       transform: scale(1.1);
       filter: brightness(80%);
     }
 
-    /* Optional caption */
     .caption {
       position: absolute;
       bottom: 0;
@@ -73,38 +72,99 @@
     .gallery-item:hover .caption {
       opacity: 1;
     }
-  </style>
 
+    /* Fullscreen modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+
+    .modal:active {
+      display: none;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .close:hover {
+      color: #ff5555;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
+  <div class="container">
     <h1>Gallery</h1>
     <div class="gallery">
       <div class="gallery-item">
-        <img src="https://launion.gov.ph/wp-content/uploads/2020/02/01-2-4-2048x1152.jpg" alt="Gallery Image 1">
-        <div class="caption"></div>
+        <img src="../asset/images/sp05.jpg" alt="Gallery Image 1">
       </div>
       <div class="gallery-item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfNhML-6ttAJLBCxLz8s-hBgU9R8tUJxgIlIRnxP8g1-ZxZu2Cei99aa5J7wgwHvXXdRQ&usqp=CAU" alt="Gallery Image 2">
-        <div class="caption"></div>
+        <img src="../asset/images/sp01.jpg" alt="Gallery Image 2">
       </div>
       <div class="gallery-item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-AznIPn6EHiBBaNNHHuo8949QOyzPDX47PlJFj6txWVFw3et_Lag0m7VvCF8ybr2fKB4&usqp=CAU" alt="Gallery Image 3">
-        <div class="caption"></div>
+        <img src="../asset/images/sp02.jpg" alt="Gallery Image 3">
       </div>
       <div class="gallery-item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKtMsqXwLR0Lgn0U3_Bju2E5y_iq359D9IhrYB0ounZXHFJlYJmnNKg8rSggZtE5MSKek&usqp=CAU" alt="Gallery Image 4">
-        <div class="caption"></div>
+        <img src="../asset/images/sp03.jpg" alt="Gallery Image 4">
       </div>
       <div class="gallery-item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf-xW-PF5s3dvwFdSNtSPkflIyK1_-SGS51pikFSS3p4hAbRVtg5uzdqqYfARR4porWI0&usqp=CAU" alt="Gallery Image 5">
-        <div class="caption"></div>
+        <img src="../asset/images/sp04.jpg" alt="Gallery Image 5">
       </div>
       <div class="gallery-item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfvEM_YbMjNAZrxKcZBVrWg_GpT7X2p8apmNCRUPOP2FppMYmFQXhOQIh29d31NtgGBkQ&usqp=CAU" alt="Gallery Image 6">
-        <div class="caption"></div>
+        <img src="../asset/images/logo.jpg" alt="Gallery Image 6">
       </div>
     </div>
   </div>
+
+  <!-- Modal -->
+  <div class="modal" id="imageModal">
+    <span class="close" id="closeModal">&times;</span>
+    <img id="modalImg" src="" alt="Fullscreen Image">
+  </div>
+
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeModal = document.getElementById("closeModal");
+
+    document.querySelectorAll(".gallery-item img").forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+      });
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>

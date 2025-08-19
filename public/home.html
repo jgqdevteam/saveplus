@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -21,19 +21,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      color: rgb(37, 101, 219);
       text-align: center;
     }
 
     .hero h1 {
       font-size: 48px;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     }
 
     .hero p {
       font-size: 20px;
       margin-top: 10px;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
 
     .container {
@@ -64,11 +64,20 @@
       overflow: hidden;
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
     .highlight-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    /* Zoom effect when clicked */
+    .highlight-card.zoomed {
+      transform: scale(1.2);
+      z-index: 10;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
     .highlight-card img {
@@ -91,14 +100,13 @@
   </style>
 </head>
 <body>
-   <div class="hero">
+  <div class="hero">
     <div>
       <h1>Welcome to Our Labor Service Company</h1>
       <p>Providing reliable manpower solutions for every industry</p>
     </div>
   </div>
 
-  <!-- Main Content -->
   <div class="container">
     <div class="intro">
       <h2>Who We Are</h2>
@@ -127,5 +135,25 @@
       </div>
     </div>
   </div>
+
+  <script>
+    const cards = document.querySelectorAll(".highlight-card");
+
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        // Remove zoom from other cards
+        cards.forEach(c => c.classList.remove("zoomed"));
+        // Toggle zoom on clicked card
+        card.classList.toggle("zoomed");
+      });
+    });
+
+    // Optional: click anywhere outside cards to reset zoom
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".highlight-card")) {
+        cards.forEach(c => c.classList.remove("zoomed"));
+      }
+    });
+  </script>
 </body>
 </html>
