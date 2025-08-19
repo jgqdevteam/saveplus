@@ -12,15 +12,15 @@
     <link rel="icon" type="image/jpg" href="./asset/images/logo.jpg" />
   </head>
 
-  <body>
+  <!-- <body>
     <div class="container">
-      <!-- Header -->
+
       <div class="header">
         <div class="titlex">
           <h1>SAVE PLUS LABOR SERVICE COOPERATIVE</h1>
         </div>
       </div>
-      <!-- Navigation -->
+
       <div class="sidebar">
         <nav class="menu-container">
           <a href="./public/home.html" class="menu" target="contentFrame"
@@ -40,7 +40,7 @@
           >
         </nav>
       </div>
-      <!-- Content -->
+
       <div class="content">
         <iframe
           class="ifrm"
@@ -48,10 +48,53 @@
           src="./public/home.html"
         ></iframe>
       </div>
-      <!-- Footer -->
+
       <div class="card-footer">
         <footer>© 2025 SavePlus. All rights reserved.</footer>
       </div>
     </div>
-  </body>
+  </body> -->
+  
+
+  <body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="titlex">
+        <h1>SAVE PLUS LABOR SERVICE COOPERATIVE</h1>
+      </div>
+      <!-- Hamburger button (only visible on mobile) -->
+      <button class="menu-toggle" id="menuToggle">&#9776;</button>
+    </div>
+
+    <!-- Navigation -->
+    <div class="sidebar" id="sidebar">
+      <nav class="menu-container">
+        <a href="./public/home.html" class="menu" target="contentFrame">Home</a>
+        <a href="./public/about.html" class="menu" target="contentFrame">About</a>
+        <a href="./public/services.html" class="menu" target="contentFrame">Services</a>
+        <a href="./public/gallery.html" class="menu" target="contentFrame">Gallery</a>
+        <a href="./public/contactus.html" class="menu" target="contentFrame">Contact Us</a>
+      </nav>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <iframe class="ifrm" name="contentFrame" src="./public/home.html"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <div class="card-footer">
+      <footer>© 2025 SavePlus. All rights reserved.</footer>
+    </div>
+  </div>
+
+  <script>
+    // Toggle sidebar in mobile
+    document.getElementById("menuToggle").addEventListener("click", function () {
+      document.getElementById("sidebar").classList.toggle("active");
+    });
+  </script>
+</body>
+
 </html>
